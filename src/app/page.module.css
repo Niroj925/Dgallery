@@ -1,0 +1,12 @@
+.main{
+  background-color: #2F293f;
+  min-height: 650px;
+}
+
+.heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
