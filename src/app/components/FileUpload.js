@@ -2,7 +2,6 @@
 import { useState } from "react";
 import axios from "axios";
 import "./FileUpload.css";
-import "dotenv/config";
 
 const FileUpload = ({ contract, account, provider }) => {
   console.log(`pinata api:${process.env.PINATA_API_KEY}`)
@@ -52,6 +51,8 @@ const FileUpload = ({ contract, account, provider }) => {
   };
   return (
     <div className="top">
+      {/* <p>{process.env.PINATA_API_KEY}</p> */}
+      <p>{process.env.PINATA_API_KEY}</p>
       <form className="form" onSubmit={handleSubmit}>
         <div className="uploads">
         <label htmlFor="file-upload" className="choose">
