@@ -30,7 +30,9 @@
   margin-left: 50px;
   margin-top: 20px;
   overflow-y: auto;
+  /* overflow: hidden; */
   padding: 5px;
+  
 }
 
 .imageCard{

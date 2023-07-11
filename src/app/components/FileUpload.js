@@ -4,7 +4,6 @@ import axios from "axios";
 import "./FileUpload.css";
 
 const FileUpload = ({ contract, account, provider }) => {
-  console.log(`pinata api:${process.env.PINATA_API_KEY}`)
   const [file, setFile] = useState(null);
   const [fileName, setFileName] = useState("No image selected");
   const handleSubmit = async (e) => {
@@ -51,8 +50,6 @@ const FileUpload = ({ contract, account, provider }) => {
   };
   return (
     <div className="top">
-      {/* <p>{process.env.PINATA_API_KEY}</p> */}
-      <p>{process.env.PINATA_API_KEY}</p>
       <form className="form" onSubmit={handleSubmit}>
         <div className="uploads">
         <label htmlFor="file-upload" className="choose">

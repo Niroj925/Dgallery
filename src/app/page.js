@@ -5,7 +5,6 @@ import { ethers } from "ethers";
 import FileUpload from "./components/FileUpload";
 import Display from "./components/Display";
 import styles from "./page.module.css";
-// import { ethers } from "hardhat";
 
 function App() {
   const [account, setAccount] = useState("");
@@ -14,7 +13,6 @@ function App() {
 
   useEffect(() => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
-    //  const privdr=new ethers.providers.Web3Provider
     const loadProvider = async () => {
       if (provider) {
         window.ethereum.on("chainChanged", () => {
