@@ -1,5 +1,5 @@
 "use client";
-import Upload from "./artifacts/contracts/Gallery.sol/Gallery.json";
+import Upload from "./contract/Gallery.json";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import FileUpload from "./components/FileUpload";
@@ -11,25 +11,8 @@ function App() {
   const [contract, setContract] = useState(null);
   const [provider, setProvider] = useState(null);
 
- 
-
   useEffect(() => {
-    let providers
-
-if (window.ethereum == null) {
-
-    console.log("MetaMask not installed; using read-only defaults")
-    providers = ethers.getDefaultProvider()
-    setProvider(providers);
-      console.log(providers)
-} else {
-    providers = new ethers.BrowserProvider(window.ethereum)
-     setProvider(providers);
-     console.log(providers)
-}
-
-
-    // const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const loadProvider = async () => {
       if (provider) {
         window.ethereum.on("chainChanged", () => {
