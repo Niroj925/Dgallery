@@ -11,8 +11,25 @@ function App() {
   const [contract, setContract] = useState(null);
   const [provider, setProvider] = useState(null);
 
+ 
+
   useEffect(() => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    let providers
+
+if (window.ethereum == null) {
+
+    console.log("MetaMask not installed; using read-only defaults")
+    providers = ethers.getDefaultProvider()
+    setProvider(providers);
+      console.log(providers)
+} else {
+    providers = new ethers.BrowserProvider(window.ethereum)
+     setProvider(providers);
+     console.log(providers)
+}
+
+
+    // const provider = new ethers.providers.Web3Provider(window.ethereum);
     const loadProvider = async () => {
       if (provider) {
         window.ethereum.on("chainChanged", () => {
